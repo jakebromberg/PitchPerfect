@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var recorderState: UILabel!
     
     @IBAction func recordAudio(sender: UIButton) {
-        self.recorderState.hidden = false
+        self.showRecordingInProgress()
         
         // TODO: Record the user's voice
         println("in recordAudio")
+    }
+    
+    @IBAction func stopRecording(sender: UIButton, forEvent event: UIEvent) {
+        self.hideRecordingInProgress()
     }
 
     override func viewDidLoad() {
@@ -27,6 +31,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func hideRecordingInProgress() {
+        self.recorderState.hidden = true
+    }
+    
+    func showRecordingInProgress() {
+        self.recorderState.hidden = false
     }
     
 }
