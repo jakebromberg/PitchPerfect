@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var recorderState: UILabel!
+    
     @IBAction func recordAudio(sender: UIButton) {
-        // TODO: Show text "recording is in progress"
+        self.recorderState.hidden = false
+        
         // TODO: Record the user's voice
         println("in recordAudio")
     }
