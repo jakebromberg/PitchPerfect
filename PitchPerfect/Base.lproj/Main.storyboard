@@ -21,6 +21,9 @@
                                 <state key="normal" image="microphone">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bHO-Ns-bYu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -29,6 +32,9 @@
                             <constraint firstAttribute="centerX" secondItem="gXc-te-Wg0" secondAttribute="centerX" id="Rxs-BD-HB6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordAudio" destination="gXc-te-Wg0" id="Szq-wo-AdP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

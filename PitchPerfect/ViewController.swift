@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBAction func recordAudio(sender: UIButton) {
+        // TODO: Show text "recording is in progress"
+        // TODO: Record the user's voice
+        println("in recordAudio")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +25,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
 
