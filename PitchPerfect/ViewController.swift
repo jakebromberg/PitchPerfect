@@ -9,14 +9,15 @@
 import UIKit
 
 public class ViewController: UIViewController {
+
+    // TODO: Remove extra outlets when Swift begins to support TDD
+    @IBOutlet public weak var recordButton: UIButton!
+    @IBOutlet public weak var stopButton: UIButton!
     
-    @IBOutlet weak var recorderState: UILabel!
+    @IBOutlet public weak var recorderState: UILabel!
     
     @IBAction func recordAudio(sender: UIButton) {
         self.showRecordingInProgress()
-        
-        // TODO: Record the user's voice
-        println("in recordAudio")
     }
     
     @IBAction func stopRecording(sender: UIButton, forEvent event: UIEvent) {
