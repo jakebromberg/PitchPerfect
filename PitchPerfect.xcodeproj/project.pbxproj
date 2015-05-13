@@ -11,7 +11,7 @@
 		1D13E4951B008421007937A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13E4941B008421007937A3 /* ViewController.swift */; };
 		1D13E4981B008421007937A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D13E4961B008421007937A3 /* Main.storyboard */; };
 		1D13E49D1B008421007937A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D13E49B1B008421007937A3 /* LaunchScreen.xib */; };
-		1D13E4A91B008421007937A3 /* PitchPerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D13E4A81B008421007937A3 /* PitchPerfectTests.swift */; };
+		1D717AB71B03226A00D769B2 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D717AB61B03226A00D769B2 /* ViewControllerTests.swift */; };
 		1D8F03F81B01C8DE0071709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F03F71B01C8DE0071709F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		1D13E49C1B008421007937A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1D13E4A21B008421007937A3 /* PitchPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D13E4A71B008421007937A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D13E4A81B008421007937A3 /* PitchPerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPerfectTests.swift; sourceTree = "<group>"; };
+		1D717AB61B03226A00D769B2 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		1D8F03F71B01C8DE0071709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,8 +98,8 @@
 		1D13E4A51B008421007937A3 /* PitchPerfectTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D13E4A81B008421007937A3 /* PitchPerfectTests.swift */,
 				1D13E4A61B008421007937A3 /* Supporting Files */,
+				1D717AB61B03226A00D769B2 /* ViewControllerTests.swift */,
 			);
 			path = PitchPerfectTests;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D13E4A91B008421007937A3 /* PitchPerfectTests.swift in Sources */,
+				1D717AB71B03226A00D769B2 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

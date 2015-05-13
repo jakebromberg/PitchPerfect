@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+public class ViewController: UIViewController {
     
     @IBOutlet weak var recorderState: UILabel!
     
@@ -21,16 +21,6 @@ class ViewController: UIViewController {
     
     @IBAction func stopRecording(sender: UIButton, forEvent event: UIEvent) {
         self.hideRecordingInProgress()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func hideRecordingInProgress() {
