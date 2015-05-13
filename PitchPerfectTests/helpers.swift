@@ -15,5 +15,7 @@ typealias ViewControllerSpy = (ViewController) -> Void
 
 // A shorthand to simulate tap on an instance of UIButton control.
 func tap(target: UIButton) {
+    
+    // The snippet has been borrowed from the following SO's thread: http://bit.ly/1PFZyhm
     target.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
 }
