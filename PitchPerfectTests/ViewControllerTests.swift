@@ -12,14 +12,48 @@ import XCTest
 
 class ViewControllerTests: XCTestCase {
     
-    // Validates the label is hidden after user taps 'Stop' button.
-    func testTapStopButtonHidesRecorderState() {
+    // Validates that 'Record' button is enabled after user ends a recording session.
+    func testEndOfRecordingSessionEnablesRecordButton() {
         // Arrange
         var expected = true
         var actual: Bool!
         
         // Act
         self.act() { (c: ViewController) in
+            tap(c.recordButton)
+            tap(c.stopButton)
+            actual = c.recordButton.enabled
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
+    
+    // Validates that 'Record' button is disabled after user taps it.
+    func testTapRecordButtonDisablesIt() {
+        // Arrange
+        var expected = false
+        var actual: Bool!
+        
+        // Act
+        self.act() { (c: ViewController) in
+            tap(c.recordButton)
+            actual = c.recordButton.enabled
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
+    
+    // Validates the label is hidden after user ends a recording session.
+    func testEndOfRecordingSessionHidesRecorderState() {
+        // Arrange
+        var expected = true
+        var actual: Bool!
+        
+        // Act
+        self.act() { (c: ViewController) in
+            tap(c.recordButton)
             tap(c.stopButton)
             actual = c.recorderState.hidden
         }

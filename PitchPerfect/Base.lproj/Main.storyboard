@@ -22,7 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zuk-CE-C90"/>
+                                    <action selector="tapRecordButton:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yeA-l2-7yd"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk3-eB-q5W">
@@ -37,7 +37,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopRecording:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wGG-2V-NbL"/>
+                                    <action selector="tapStopButton:forEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EIC-SU-pov"/>
                                 </connections>
                             </button>
                         </subviews>

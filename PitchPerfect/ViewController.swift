@@ -16,20 +16,22 @@ public class ViewController: UIViewController {
     
     @IBOutlet public weak var recorderState: UILabel!
     
-    @IBAction func recordAudio(sender: UIButton) {
-        self.showRecordingInProgress()
+    @IBAction func tapRecordButton(sender: UIButton, forEvent event: UIEvent) {
+        self.startRecording()
     }
     
-    @IBAction func stopRecording(sender: UIButton, forEvent event: UIEvent) {
-        self.hideRecordingInProgress()
+    @IBAction func tapStopButton(sender: UIButton, forEvent event: UIEvent) {
+        self.stopRecording()
     }
     
-    func hideRecordingInProgress() {
+    func stopRecording() {
         self.recorderState.hidden = true
+        self.recordButton.enabled = true
     }
     
-    func showRecordingInProgress() {
+    func startRecording() {
         self.recorderState.hidden = false
+        self.recordButton.enabled = false
     }
     
 }
