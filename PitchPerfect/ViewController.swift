@@ -26,11 +26,13 @@ public class ViewController: UIViewController {
     
     func stopRecording() {
         self.recorderState.hidden = true
+        self.stopButton.hidden = true
         self.recordButton.enabled = true
     }
     
     func startRecording() {
         self.recorderState.hidden = false
+        self.stopButton.hidden = false
         self.recordButton.enabled = false
     }
     
