@@ -1,8 +1,8 @@
 //
-//  ViewControllerTests.swift
+//  StartOfRecordingSessionTests.swift
 //  PitchPerfect
 //
-//  Created by Pavel Tsurbeleu on 5/12/15.
+//  Created by Pavel Tsurbeleu on 5/14/15.
 //  Copyright (c) 2015 Pavel Tsurbeleu. All rights reserved.
 //
 
@@ -10,27 +10,12 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class ViewControllerTests: XCTestCase {
-    
-    // Validates the 'Stop' button is hidden after user ends a recording session.
-    func testEndOfRecordingSessionHidesStopButton() {
+class StartOfRecordingSessionTests: XCTestCase {
+
+    // Validates that 'Record' button is disabled after user taps it.
+    func testStartSessionDisablesRecordButton() {
         // Arrange
-        var expected = true
-        var actual: Bool!
-        
-        // Act
-        self.act() { (c: ViewController) in
-            actual = c.stopButton.hidden
-        }
-        
-        // Assert
-        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
-    }
-    
-    // Validates that 'Record' button is enabled after user ends a recording session.
-    func testEndOfRecordingSessionEnablesRecordButton() {
-        // Arrange
-        var expected = true
+        var expected = false
         var actual: Bool!
         
         // Act
@@ -42,10 +27,25 @@ class ViewControllerTests: XCTestCase {
         XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
     }
     
-    // Validates the label is hidden after user ends a recording session.
-    func testEndOfRecordingSessionHidesRecorderState() {
+    // Validates the 'Stop' button is visible after user taps 'Record' button.
+    func testStartSessionShowsStopButton() {
         // Arrange
-        var expected = true
+        var expected = false
+        var actual: Bool!
+        
+        // Act
+        self.act() { (c: ViewController) in
+            actual = c.stopButton.hidden
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
+    
+    // Validates the label is visible after user taps 'Record' button.
+    func testStartSessionShowsRecorderState() {
+        // Arrange
+        var expected = false
         var actual: Bool!
         
         // Act
@@ -61,7 +61,6 @@ class ViewControllerTests: XCTestCase {
         executeSpy() { (c: ViewController) in
             // Actual scenario work
             tap(c.recordButton)
-            tap(c.stopButton)
             
             // Let calling code handle the rest
             testSpy(c)
