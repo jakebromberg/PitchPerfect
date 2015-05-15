@@ -10,10 +10,10 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class ViewControllerTests: XCTestCase {
+class EndOfRecordingSessionTests: XCTestCase {
     
     // Validates the 'Stop' button is hidden after user ends a recording session.
-    func testEndOfRecordingSessionHidesStopButton() {
+    func testEndSessionHidesStopButton() {
         // Arrange
         var expected = true
         var actual: Bool!
@@ -28,7 +28,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     // Validates that 'Record' button is enabled after user ends a recording session.
-    func testEndOfRecordingSessionEnablesRecordButton() {
+    func testEndSessionEnablesRecordButton() {
         // Arrange
         var expected = true
         var actual: Bool!
@@ -43,7 +43,7 @@ class ViewControllerTests: XCTestCase {
     }
     
     // Validates the label is hidden after user ends a recording session.
-    func testEndOfRecordingSessionHidesRecorderState() {
+    func testEndSessionHidesRecorderState() {
         // Arrange
         var expected = true
         var actual: Bool!
