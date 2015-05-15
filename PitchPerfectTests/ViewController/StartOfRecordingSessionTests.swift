@@ -13,7 +13,7 @@ import XCTest
 class StartOfRecordingSessionTests: XCTestCase {
 
     // Validates that 'Record' button is disabled after user taps it.
-    func testStartSessionDisablesRecordButton() {
+    func testShouldDisableRecordButton() {
         // Arrange
         var expected = false
         var actual: Bool!
@@ -28,7 +28,7 @@ class StartOfRecordingSessionTests: XCTestCase {
     }
     
     // Validates the 'Stop' button is visible after user taps 'Record' button.
-    func testStartSessionShowsStopButton() {
+    func testShouldShowStopButton() {
         // Arrange
         var expected = false
         var actual: Bool!
@@ -43,7 +43,7 @@ class StartOfRecordingSessionTests: XCTestCase {
     }
     
     // Validates the label is visible after user taps 'Record' button.
-    func testStartSessionShowsRecorderState() {
+    func testShouldShowRecorderState() {
         // Arrange
         var expected = false
         var actual: Bool!

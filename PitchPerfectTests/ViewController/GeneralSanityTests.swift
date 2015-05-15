@@ -41,7 +41,6 @@ class GeneralSanityTests: XCTestCase {
         XCTAssert(actual != nil, "Assertion failed since stopButton outlet is not connected to the view")
     }
     
-    
     // Validates the 'Record' button outlet is connected to the actual control.
     func testRecordButtonOutletIsConnected() {
         // Arrange

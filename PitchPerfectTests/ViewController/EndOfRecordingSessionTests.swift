@@ -13,7 +13,7 @@ import XCTest
 class EndOfRecordingSessionTests: XCTestCase {
     
     // Validates the 'Stop' button is hidden after user ends a recording session.
-    func testEndSessionHidesStopButton() {
+    func testShouldHideStopButton() {
         // Arrange
         var expected = true
         var actual: Bool!
@@ -28,7 +28,7 @@ class EndOfRecordingSessionTests: XCTestCase {
     }
     
     // Validates that 'Record' button is enabled after user ends a recording session.
-    func testEndSessionEnablesRecordButton() {
+    func testShouldEnableRecordButton() {
         // Arrange
         var expected = true
         var actual: Bool!
@@ -43,7 +43,7 @@ class EndOfRecordingSessionTests: XCTestCase {
     }
     
     // Validates the label is hidden after user ends a recording session.
-    func testEndSessionHidesRecorderState() {
+    func testShouldHideRecorderState() {
         // Arrange
         var expected = true
         var actual: Bool!
