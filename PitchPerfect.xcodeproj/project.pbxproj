@@ -12,6 +12,8 @@
 		1D13E4981B008421007937A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D13E4961B008421007937A3 /* Main.storyboard */; };
 		1D13E49D1B008421007937A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D13E49B1B008421007937A3 /* LaunchScreen.xib */; };
 		1D717AB91B0329F600D769B2 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D717AB81B0329F600D769B2 /* helpers.swift */; };
+		1D874A321B072373001A726D /* MainStoryboardNavigationSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */; };
+		1D874A341B072EE2001A726D /* spies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A331B072EE2001A726D /* spies.swift */; };
 		1D8F03F81B01C8DE0071709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F03F71B01C8DE0071709F /* Images.xcassets */; };
 		1DECE30C1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */; };
 		1DECE30E1B05C467004D6495 /* GeneralSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */; };
@@ -39,6 +41,8 @@
 		1D13E4A21B008421007937A3 /* PitchPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D13E4A71B008421007937A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D717AB81B0329F600D769B2 /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
+		1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboardNavigationSanityTests.swift; sourceTree = "<group>"; };
+		1D874A331B072EE2001A726D /* spies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spies.swift; sourceTree = "<group>"; };
 		1D8F03F71B01C8DE0071709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOfRecordingSessionTests.swift; sourceTree = "<group>"; };
 		1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSanityTests.swift; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 		1D13E4A51B008421007937A3 /* PitchPerfectTests */ = {
 			isa = PBXGroup;
 			children = (
+				1D874A301B072373001A726D /* Navigation */,
 				1DECE30A1B05C1FB004D6495 /* ViewController */,
 				1D13E4A61B008421007937A3 /* Supporting Files */,
 				1D717AB81B0329F600D769B2 /* helpers.swift */,
+				1D874A331B072EE2001A726D /* spies.swift */,
 			);
 			path = PitchPerfectTests;
 			sourceTree = "<group>";
@@ -119,6 +125,14 @@
 				1D13E4A71B008421007937A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D874A301B072373001A726D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		1DECE30A1B05C1FB004D6495 /* ViewController */ = {
@@ -242,8 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DECE30E1B05C467004D6495 /* GeneralSanityTests.swift in Sources */,
+				1D874A341B072EE2001A726D /* spies.swift in Sources */,
 				1DECE3101B05C765004D6495 /* DefaultsTests.swift in Sources */,
 				1DECE30C1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift in Sources */,
+				1D874A321B072373001A726D /* MainStoryboardNavigationSanityTests.swift in Sources */,
 				1D717AB91B0329F600D769B2 /* helpers.swift in Sources */,
 				1DECE3121B05C801004D6495 /* StartOfRecordingSessionTests.swift in Sources */,
 			);

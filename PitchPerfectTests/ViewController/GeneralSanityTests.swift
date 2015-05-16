@@ -74,16 +74,3 @@ class GeneralSanityTests: XCTestCase {
     }
     
 }
-
-
-func executeSpy(testSpy: ViewControllerSpy) {
-    // This snippet has been borrowed from TheMovieDB project [link & credits of the author go here]
-    let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-    let controller = storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-    
-    // This snippet has been borrowed from Johan Williams's blog post, see the link: http://bit.ly/1JY63xI
-    controller.loadView()
-    
-    // Let the unit test code analyze the controller's state
-    testSpy(controller)
-}

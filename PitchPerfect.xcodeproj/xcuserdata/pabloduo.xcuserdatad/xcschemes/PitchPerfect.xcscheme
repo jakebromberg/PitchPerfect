@@ -51,6 +51,11 @@
                BlueprintName = "PitchPerfectTests"
                ReferencedContainer = "container:PitchPerfect.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ViewControllerTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
