@@ -12,7 +12,22 @@ import XCTest
 
 class GeneralSanityTests: XCTestCase {
     
-    // Validates the 'Stop' button outlet is connected to the actual control.
+    // Validates the navigation item of the controller has expected title.
+    func testControllerNavigationItemHasExpectedTitle() {
+        // Arrange
+        let expected = "Record"
+        var actual: String?
+        
+        // Act
+        self.act() { (c: ViewController) in
+            actual = c.navigationItem.title
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
+    
+    // Validates the view controller has expected title.
     func testControllerHasExpectedTitle() {
         // Arrange
         let expected = "Record"
