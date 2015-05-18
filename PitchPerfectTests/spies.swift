@@ -12,14 +12,14 @@ import UIKit
 
 typealias ViewControllerSpy = (ViewController) -> Void
 
-typealias NavigationControllerSpy = (UINavigationController) -> Void
+typealias NavigationControllerSpy = (NavigationController) -> Void
 
 // TODO: Find a better name for this concept of execution spies.
 
 // A snippet which combines general routine to instantiate and setup UINavigationController.
 func executeSpy(testSpy: NavigationControllerSpy) {
     // Summon the actual controller from NIB
-    let controller: UINavigationController = executeSpyCore("NavigationController")
+    let controller: NavigationController = executeSpyCore("NavigationController")
     
     // Let the unit test code analyze the controller's state
     testSpy(controller)

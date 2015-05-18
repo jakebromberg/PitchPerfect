@@ -17,6 +17,10 @@ func tap(target: UIButton) {
     target.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
 }
 
+func touch(controller: UIViewController) {
+    let view = controller.view
+}
+
 // A shorthand to get class name of the specified view controller as string.
 func className(type: UIViewController) -> NSString {
     return className(type.classForCoder)
