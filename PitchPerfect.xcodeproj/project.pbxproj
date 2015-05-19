@@ -16,6 +16,8 @@
 		1D874A321B072373001A726D /* MainStoryboardNavigationSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */; };
 		1D874A341B072EE2001A726D /* spies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A331B072EE2001A726D /* spies.swift */; };
 		1D8F03F81B01C8DE0071709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F03F71B01C8DE0071709F /* Images.xcassets */; };
+		1DE93DF81B0AFA6000644B34 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93DF71B0AFA6000644B34 /* PlaySoundsViewController.swift */; };
+		1DE93DFC1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93DFB1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift */; };
 		1DECE30C1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */; };
 		1DECE30E1B05C467004D6495 /* GeneralSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */; };
 		1DECE3101B05C765004D6495 /* DefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30F1B05C765004D6495 /* DefaultsTests.swift */; };
@@ -46,6 +48,8 @@
 		1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboardNavigationSanityTests.swift; sourceTree = "<group>"; };
 		1D874A331B072EE2001A726D /* spies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spies.swift; sourceTree = "<group>"; };
 		1D8F03F71B01C8DE0071709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1DE93DF71B0AFA6000644B34 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		1DE93DFB1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsGeneralSanityTests.swift; sourceTree = "<group>"; };
 		1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOfRecordingSessionTests.swift; sourceTree = "<group>"; };
 		1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSanityTests.swift; sourceTree = "<group>"; };
 		1DECE30F1B05C765004D6495 /* DefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsTests.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				1D8F03F71B01C8DE0071709F /* Images.xcassets */,
 				1D13E4921B008421007937A3 /* AppDelegate.swift */,
 				1D13E4941B008421007937A3 /* ViewController.swift */,
+				1DE93DF71B0AFA6000644B34 /* PlaySoundsViewController.swift */,
 				1D13E4961B008421007937A3 /* Main.storyboard */,
 				1D13E49B1B008421007937A3 /* LaunchScreen.xib */,
 				1D13E4901B008421007937A3 /* Supporting Files */,
@@ -113,6 +118,7 @@
 		1D13E4A51B008421007937A3 /* PitchPerfectTests */ = {
 			isa = PBXGroup;
 			children = (
+				1DE93DFA1B0AFB3C00644B34 /* PlaySounds */,
 				1D874A301B072373001A726D /* Navigation */,
 				1DECE30A1B05C1FB004D6495 /* ViewController */,
 				1D13E4A61B008421007937A3 /* Supporting Files */,
@@ -136,6 +142,14 @@
 				1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1DE93DFA1B0AFB3C00644B34 /* PlaySounds */ = {
+			isa = PBXGroup;
+			children = (
+				1DE93DFB1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift */,
+			);
+			path = PlaySounds;
 			sourceTree = "<group>";
 		};
 		1DECE30A1B05C1FB004D6495 /* ViewController */ = {
@@ -251,6 +265,7 @@
 			files = (
 				1D13E4951B008421007937A3 /* ViewController.swift in Sources */,
 				1D269DBF1B0868AD0051EB74 /* NavigationController.swift in Sources */,
+				1DE93DF81B0AFA6000644B34 /* PlaySoundsViewController.swift in Sources */,
 				1D13E4931B008421007937A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE93DFC1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift in Sources */,
 				1DECE30E1B05C467004D6495 /* GeneralSanityTests.swift in Sources */,
 				1D874A341B072EE2001A726D /* spies.swift in Sources */,
 				1DECE3101B05C765004D6495 /* DefaultsTests.swift in Sources */,

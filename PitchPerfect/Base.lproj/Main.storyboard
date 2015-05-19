@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crS-kW-oSC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -66,7 +67,7 @@
         <!--Mix-mix-->
         <scene sceneID="7Q8-PL-CL4">
             <objects>
-                <viewController title="Mix-mix" id="eld-ZK-YUH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaySoundsController" title="Mix-mix" id="eld-ZK-YUH" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YZo-wa-nN3"/>
                         <viewControllerLayoutGuide type="bottom" id="nlZ-kk-yO4"/>
@@ -74,8 +75,44 @@
                     <view key="view" contentMode="scaleToFill" id="2sF-bl-pYd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD8-lU-WHu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="slowmo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSlowMo:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="ciT-Kd-VUO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GD8-lU-WHu" firstAttribute="leading" secondItem="2sF-bl-pYd" secondAttribute="leadingMargin" constant="22" id="WH7-bG-B8y"/>
+                            <constraint firstItem="GD8-lU-WHu" firstAttribute="top" secondItem="YZo-wa-nN3" secondAttribute="bottom" constant="44" id="gUC-Hs-Roa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="GD8-lU-WHu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="WH7-bG-B8y"/>
+                                <exclude reference="gUC-Hs-Roa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="GD8-lU-WHu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="WH7-bG-B8y"/>
+                                <include reference="gUC-Hs-Roa"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="slowMoButtom" destination="GD8-lU-WHu" id="H6j-Oc-y7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gs-Og-plb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,6 +139,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="slowmo" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
     </resources>
 </document>
