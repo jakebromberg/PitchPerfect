@@ -16,6 +16,8 @@
 		1D874A321B072373001A726D /* MainStoryboardNavigationSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */; };
 		1D874A341B072EE2001A726D /* spies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D874A331B072EE2001A726D /* spies.swift */; };
 		1D8F03F81B01C8DE0071709F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F03F71B01C8DE0071709F /* Images.xcassets */; };
+		1DD960911B0B8DA8001AAFDD /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1DD960901B0B8DA8001AAFDD /* movie_quote.mp3 */; };
+		1DD960931B0B8E33001AAFDD /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD960921B0B8E33001AAFDD /* helpers.swift */; };
 		1DE93DF81B0AFA6000644B34 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93DF71B0AFA6000644B34 /* PlaySoundsViewController.swift */; };
 		1DE93DFC1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93DFB1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift */; };
 		1DECE30C1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */; };
@@ -48,6 +50,8 @@
 		1D874A311B072373001A726D /* MainStoryboardNavigationSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboardNavigationSanityTests.swift; sourceTree = "<group>"; };
 		1D874A331B072EE2001A726D /* spies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = spies.swift; sourceTree = "<group>"; };
 		1D8F03F71B01C8DE0071709F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1DD960901B0B8DA8001AAFDD /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		1DD960921B0B8E33001AAFDD /* helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		1DE93DF71B0AFA6000644B34 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		1DE93DFB1B0AFB5600644B34 /* PlaySoundsGeneralSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsGeneralSanityTests.swift; sourceTree = "<group>"; };
 		1DECE30B1B05C1FB004D6495 /* EndOfRecordingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndOfRecordingSessionTests.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				1D13E49B1B008421007937A3 /* LaunchScreen.xib */,
 				1D13E4901B008421007937A3 /* Supporting Files */,
 				1D269DBE1B0868AD0051EB74 /* NavigationController.swift */,
+				1DD960921B0B8E33001AAFDD /* helpers.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 		1D13E4901B008421007937A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DD960901B0B8DA8001AAFDD /* movie_quote.mp3 */,
 				1D13E4911B008421007937A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -245,6 +251,7 @@
 			files = (
 				1D8F03F81B01C8DE0071709F /* Images.xcassets in Resources */,
 				1D13E4981B008421007937A3 /* Main.storyboard in Resources */,
+				1DD960911B0B8DA8001AAFDD /* movie_quote.mp3 in Resources */,
 				1D13E49D1B008421007937A3 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +274,7 @@
 				1D269DBF1B0868AD0051EB74 /* NavigationController.swift in Sources */,
 				1DE93DF81B0AFA6000644B34 /* PlaySoundsViewController.swift in Sources */,
 				1D13E4931B008421007937A3 /* AppDelegate.swift in Sources */,
+				1DD960931B0B8E33001AAFDD /* helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
