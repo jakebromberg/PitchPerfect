@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crS-kW-oSC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -85,28 +86,62 @@
                                     <action selector="playSlowMo:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="ciT-Kd-VUO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-Bl-2e2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playFastMo:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="kad-RC-dAW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-ac-5kp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stopStop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButton:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="rsO-PQ-Jdc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xyn-Bl-2e2" firstAttribute="top" secondItem="YZo-wa-nN3" secondAttribute="bottom" constant="44" id="4qd-ql-zZa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xyn-Bl-2e2" secondAttribute="trailing" constant="22" id="AUd-W8-BBP"/>
                             <constraint firstItem="GD8-lU-WHu" firstAttribute="leading" secondItem="2sF-bl-pYd" secondAttribute="leadingMargin" constant="22" id="WH7-bG-B8y"/>
                             <constraint firstItem="GD8-lU-WHu" firstAttribute="top" secondItem="YZo-wa-nN3" secondAttribute="bottom" constant="44" id="gUC-Hs-Roa"/>
+                            <constraint firstItem="nlZ-kk-yO4" firstAttribute="top" secondItem="Oc3-ac-5kp" secondAttribute="bottom" constant="92" id="mqQ-19-4H2"/>
+                            <constraint firstItem="Oc3-ac-5kp" firstAttribute="centerX" secondItem="2sF-bl-pYd" secondAttribute="centerX" id="oia-2e-tdg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="GD8-lU-WHu"/>
+                                <exclude reference="xyn-Bl-2e2"/>
+                                <exclude reference="Oc3-ac-5kp"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="WH7-bG-B8y"/>
                                 <exclude reference="gUC-Hs-Roa"/>
+                                <exclude reference="4qd-ql-zZa"/>
+                                <exclude reference="AUd-W8-BBP"/>
+                                <exclude reference="oia-2e-tdg"/>
+                                <exclude reference="mqQ-19-4H2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="GD8-lU-WHu"/>
+                                <include reference="xyn-Bl-2e2"/>
+                                <include reference="Oc3-ac-5kp"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="WH7-bG-B8y"/>
                                 <include reference="gUC-Hs-Roa"/>
+                                <include reference="4qd-ql-zZa"/>
+                                <include reference="AUd-W8-BBP"/>
+                                <include reference="oia-2e-tdg"/>
+                                <include reference="mqQ-19-4H2"/>
                             </mask>
                         </variation>
                     </view>
@@ -138,8 +173,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowmo" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
+        <image name="stopStop" width="50" height="50"/>
     </resources>
 </document>

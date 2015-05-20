@@ -12,25 +12,55 @@ import AVFoundation
 public class PlaySoundsViewController: UIViewController {
     
     // TODO: Learn more about strong and weak references in Swift/iOS.
-    var player: AVAudioPlayer!
+    var player: AVAudioPlayer?
     
     @IBOutlet public var slowMoButtom: UIButton!
     
     @IBAction func playSlowMo(sender: UIButton, forEvent event: UIEvent) {
+        self.playAudio(Float(0.5))
+    }
+    
+    @IBAction func playFastMo(sender: UIButton, forEvent event: UIEvent) {
+        self.playAudio(Float(3.0))
+    }
+    
+    @IBAction func stopButton(sender: UIButton, forEvent event: UIEvent) {
+        self.stopAudio()
+    }
+    
+    func initializePlayer(resource: NSURL!) {
+        self.player = AVAudioPlayer(contentsOfURL: resource, error: nil)
+    }
+    
+    func stopAudio() {
+        self.player?.stop()
+        self.player?.currentTime = 0.0
+    }
+    
+    func playAudio(rate: Float) {
+        self.ensurePlayerReady()
+        self.stopAudio()
+        self.player?.rate = rate
+        self.player?.play()
+    }
+    
+    func ensurePlayerReady() {
+        // Instantiate the player once and only once
+        if self.player != nil {
+            return
+        }
+        
         // Assembly an adhoc delegate to fetch the resource from bundle
         let fetchMovieQuote: FetchBundleResourceDelegate = (
-            ok: self.playMovieQuote,
+            ok: self.initializePlayer,
             notfound: self.noMovieQuote
         )
         
         // Fetch the actual resource
         fetchResource("movie_quote", withExtension: "mp3", delegate: fetchMovieQuote)
-    }
-    
-    // Plays movie quote if the corresponding resource has been found in the main bundle
-    func playMovieQuote(resource: NSURL!) {
-        self.player = AVAudioPlayer(contentsOfURL: resource, error: nil)
-        self.player.play()
+        
+        // Enable variable audio playback rate
+        self.player?.enableRate = true
     }
     
     // Handles the case when the corresponding resource has not been found in the main bundle
