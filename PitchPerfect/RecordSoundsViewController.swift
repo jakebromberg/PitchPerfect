@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundsViewController.swift
 //  PitchPerfect
 //
 //  Created by Pavel Tsurbeleu on 5/10/15.
@@ -34,6 +34,11 @@ public class RecordSoundsViewController: UIViewController {
         self.recorderState.hidden = false
         self.stopButton.hidden = false
         self.recordButton.enabled = false
+    }
+    
+    public override func showViewController(vc: UIViewController, sender: AnyObject?) {
+        println("Hijacked the flow...")
+        super.showViewController(vc, sender: sender)
     }
     
 }
