@@ -9,6 +9,8 @@
 import UIKit
 
 public class RecordSoundsViewController: UIViewController {
+    
+    var recordingService: AudioRecordingService = AudioRecordingService()
 
     // TODO: Remove extra outlets when Swift begins to support TDD
     @IBOutlet public weak var recordButton: UIButton!
@@ -28,18 +30,32 @@ public class RecordSoundsViewController: UIViewController {
         self.recorderState.hidden = true
         self.stopButton.hidden = true
         self.recordButton.enabled = true
+        
+        // Stop the actual recording...
+        self.recordingService.stop()
     }
     
     func startRecording() {
         self.recorderState.hidden = false
         self.stopButton.hidden = false
         self.recordButton.enabled = false
+        
+        // Start the actual recording...
+        self.recordingService.start(self.doneWithRecording)
     }
     
-    public override func showViewController(vc: UIViewController, sender: AnyObject?) {
-        println("Hijacked the flow...")
-        super.showViewController(vc, sender: sender)
+    func doneWithRecording(record: RecordedAudio) {
+        println("doneWithRecording -> " + record.filePath.path!)
+        self.performSegueWithIdentifier("PlaySounds", sender: record)
     }
     
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // No funny business with segue identifiers and etc.
+        if let playSounds = segue.destinationViewController as? PlaySoundsDelegate {
+            let record = sender as! RecordedAudio
+            playSounds.initializePlayer(record.filePath)
+        }
+    }
 }
 
