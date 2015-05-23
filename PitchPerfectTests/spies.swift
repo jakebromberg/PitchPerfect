@@ -10,7 +10,7 @@ import Foundation
 import PitchPerfect
 import UIKit
 
-typealias ViewControllerSpy = (ViewController) -> Void
+typealias RecordSoundsViewControllerSpy = (RecordSoundsViewController) -> Void
 
 typealias NavigationControllerSpy = (NavigationController) -> Void
 
@@ -35,10 +35,10 @@ func executeSpy(testSpy: NavigationControllerSpy) {
     testSpy(controller)
 }
 
-// A snippet which combines general routine to instantiate and setup ViewController.
-func executeSpy(testSpy: ViewControllerSpy) {
+// A snippet which combines general routine to instantiate and setup RecordSoundsViewController.
+func executeSpy(testSpy: RecordSoundsViewControllerSpy) {
     // Summon the actual controller from NIB
-    let controller: ViewController = executeSpyCore("ViewController")
+    let controller: RecordSoundsViewController = executeSpyCore("RecordSoundsViewController")
     
     // Let the unit test code analyze the controller's state
     testSpy(controller)

@@ -10,7 +10,7 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class EndOfRecordingSessionTests: XCTestCase {
+class EndOfRecordingSessionTests: RecordSoundsTestCase {
     
     // Validates the 'Stop' button is hidden after user ends a recording session.
     func testShouldHideStopButton() {
@@ -57,8 +57,8 @@ class EndOfRecordingSessionTests: XCTestCase {
         XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
     }
     
-    func act(testSpy: ViewControllerSpy) {
-        executeSpy() { (c: ViewController) in
+    override func act(testSpy: ViewControllerSpy) {
+        super.act() { (c: ViewController) in
             // Actual scenario work
             tap(c.recordButton)
             tap(c.stopButton)

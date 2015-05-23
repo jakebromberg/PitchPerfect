@@ -10,7 +10,7 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class DefaultsTests: XCTestCase {
+class DefaultsTests: RecordSoundsTestCase {
     
     // Validates the 'Stop' button is hidden by default.
     func testStopButtonIsHiddenByDefault() {
@@ -40,10 +40,6 @@ class DefaultsTests: XCTestCase {
         
         // Assert
         XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
-    }
-
-    func act(testSpy: ViewControllerSpy) {
-        executeSpy(testSpy)
     }
     
 }

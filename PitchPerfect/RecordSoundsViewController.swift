@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ViewController: UIViewController {
+public class RecordSoundsViewController: UIViewController {
 
     // TODO: Remove extra outlets when Swift begins to support TDD
     @IBOutlet public weak var recordButton: UIButton!

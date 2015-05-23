@@ -10,7 +10,7 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class StartOfRecordingSessionTests: XCTestCase {
+class StartOfRecordingSessionTests: RecordSoundsTestCase {
 
     // Validates that 'Record' button is disabled after user taps it.
     func testShouldDisableRecordButton() {
@@ -57,8 +57,8 @@ class StartOfRecordingSessionTests: XCTestCase {
         XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
     }
     
-    func act(testSpy: ViewControllerSpy) {
-        executeSpy() { (c: ViewController) in
+    override func act(testSpy: ViewControllerSpy) {
+        super.act() { (c: ViewController) in
             // Actual scenario work
             tap(c.recordButton)
             

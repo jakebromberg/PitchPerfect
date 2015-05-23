@@ -10,7 +10,7 @@ import PitchPerfect
 import UIKit
 import XCTest
 
-class GeneralSanityTests: XCTestCase {
+class GeneralSanityTests: RecordSoundsTestCase {
     
     // Validates the navigation item of the controller has expected title.
     func testControllerNavigationItemHasExpectedTitle() {
@@ -82,10 +82,6 @@ class GeneralSanityTests: XCTestCase {
         
         // Assert
         XCTAssert(actual != nil, "Assertion failed since recorderState outlet is not connected to the view")
-    }
-
-    func act(testSpy: ViewControllerSpy) {
-        executeSpy(testSpy)
     }
     
 }

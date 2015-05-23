@@ -25,7 +25,7 @@ class MainStoryboardNavigationSanityTests: XCTestCase {
                 
         // Act
         self.act() { (n: NavigationController) in
-            let scene = n.visibleViewController as! ViewController
+            let scene = n.visibleViewController as! RecordSoundsViewController
             tap(scene.recordButton)
             tap(scene.stopButton)
             actual = n.topViewController.title
@@ -38,7 +38,7 @@ class MainStoryboardNavigationSanityTests: XCTestCase {
     // Validates the default visible view controller's type to ensure Main.storyboard's wiring is accurate
     func testInitialControllerType() {
         // Arrange
-        let expected = className(ViewController)
+        let expected = className(RecordSoundsViewController)
         var actual: NSString!
         
         // Act
