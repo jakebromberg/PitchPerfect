@@ -10,6 +10,13 @@ import Foundation
 import AVFoundation
 
 public typealias AudioRecordingDoneDelegate = (RecordedAudio) -> Void
+public typealias AudioRecordingFailDelegate = () -> Void
+
+// Combined type alias for convenience and both fields are required
+public typealias AudioRecordingDelegate = (
+    done: AudioRecordingDoneDelegate,
+    fail: AudioRecordingFailDelegate
+)
 
 public class RecordedAudio: NSObject {
     var title: String!
@@ -18,14 +25,14 @@ public class RecordedAudio: NSObject {
 
 public class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
     
-    var done: AudioRecordingDoneDelegate!
+    var delegate: AudioRecordingDelegate!
     var audioRecorder: AVAudioRecorder!
     var record: RecordedAudio!
     var audioSession: AVAudioSession!
     
-    public func start(done: AudioRecordingDoneDelegate) {
+    public func start(delegate: AudioRecordingDelegate) {
         // Keep reference to the callback
-        self.done = done
+        self.delegate = delegate
         
         let folders = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let folderPath = folders.first as! String
@@ -58,6 +65,10 @@ public class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
     
     public func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
-        self.done(self.record)
+        if (flag) {
+            self.delegate.done(self.record)
+        } else {
+            self.delegate.fail()
+        }
     }
 }

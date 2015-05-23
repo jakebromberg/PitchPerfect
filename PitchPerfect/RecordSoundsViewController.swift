@@ -41,7 +41,10 @@ public class RecordSoundsViewController: UIViewController {
         self.recordButton.enabled = false
         
         // Start the actual recording...
-        self.recordingService.start(self.doneWithRecording)
+        self.recordingService.start((
+            done: self.doneWithRecording,
+            fail: self.failedToRecordAudio
+        ))
     }
     
     func doneWithRecording(record: RecordedAudio) {
@@ -49,12 +52,18 @@ public class RecordSoundsViewController: UIViewController {
         self.performSegueWithIdentifier("PlaySounds", sender: record)
     }
     
+    func failedToRecordAudio() {
+        // For now this is just a simple callback to adjust UI accordingly if something goes wrong
+        println("Aww, snap! Good grief... something went wrong...")
+        self.stopRecording()
+    }
+    
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // No funny business with segue identifiers and etc.
         if let playSounds = segue.destinationViewController as? PlaySoundsDelegate {
             let record = sender as! RecordedAudio
-            playSounds.initializePlayer(record.filePath)
+            playSounds.initializePlayer(record)
         }
     }
 }
