@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public typealias BundleResourceNotFoundDelegate = () -> Void
 public typealias BundleResourceLoadedDelegate = (NSURL!) -> Void

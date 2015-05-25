@@ -16,24 +16,6 @@ import XCTest
 // and you have to be very creative to come up with bunch of names for your tests...
 
 class MainStoryboardNavigationSanityTests: XCTestCase {
-    
-    // Validates ...
-    func testShouldPresentMixmix() {
-        // Arrange
-        let expected = "Mix-mix"
-        var actual: NSString!
-                
-        // Act
-        self.act() { (n: NavigationController) in
-            let scene = n.visibleViewController as! RecordSoundsViewController
-            tap(scene.recordButton)
-            tap(scene.stopButton)
-            actual = n.topViewController.title
-        }
-        
-        // Assert
-        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
-    }
 
     // Validates the default visible view controller's type to ensure Main.storyboard's wiring is accurate
     func testInitialControllerType() {

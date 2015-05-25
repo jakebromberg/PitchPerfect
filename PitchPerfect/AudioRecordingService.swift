@@ -23,14 +23,14 @@ public class RecordedAudio: NSObject {
     var filePath: NSURL!
 }
 
-public class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
+class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
     
     var delegate: AudioRecordingDelegate!
     var audioRecorder: AVAudioRecorder!
     var record: RecordedAudio!
     var audioSession: AVAudioSession!
     
-    public func start(delegate: AudioRecordingDelegate) {
+    func start(delegate: AudioRecordingDelegate) {
         // Keep reference to the callback
         self.delegate = delegate
         
@@ -57,13 +57,13 @@ public class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
         self.audioRecorder.record()
     }
     
-    public func stop() {
+    func stop() {
         // Stop recording and adjust the audio session state
         self.audioRecorder.stop()
         self.audioSession.setActive(false, error: nil)
     }
     
-    public func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
         if (flag) {
             self.delegate.done(self.record)

@@ -12,6 +12,34 @@ import XCTest
 
 class PlaySoundsGeneralSanityTests: XCTestCase {
     
+    // Validates the 'Chipmunk' button has its currentImage property set.
+    func testChipmunkButtonHasNonEmptyImage() {
+        // Arrange
+        var actual: UIImage?
+        
+        // Act
+        self.act() { (c: PlaySoundsViewController) in
+            actual = c.chipmunkButton.currentImage
+        }
+        
+        // Assert
+        XCTAssert(actual != nil, "Assertion failed since chipmunkButton has no image set")
+    }
+    
+    // Validates the 'Chipmunk' button outlet is connected to the actual control.
+    func testChipmunkButtonOutletIsConnected() {
+        // Arrange
+        var actual: UIButton?
+        
+        // Act
+        self.act() { (c: PlaySoundsViewController) in
+            actual = c.chipmunkButton
+        }
+        
+        // Assert
+        XCTAssert(actual != nil, "Assertion failed since chipmunkButton outlet is not connected to the view")
+    }
+    
     // Validates the 'SlowMo' button has its currentImage property set.
     func testSlowMoButtonHasNonEmptyImage() {
         // Arrange

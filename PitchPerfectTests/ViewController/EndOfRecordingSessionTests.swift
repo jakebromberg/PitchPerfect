@@ -7,10 +7,30 @@
 //
 
 import PitchPerfect
+import Foundation
 import UIKit
 import XCTest
 
 class EndOfRecordingSessionTests: RecordSoundsTestCase {
+    
+    // Validates ...
+    func testShouldPresentMixmix() {
+        // Arrange
+        let expected = "Mix-mix"
+        
+        let expectation = expectationForNotification("prepareForSegue:playSounds", object: nil, handler: { notification in
+            let destination = notification.object as! UIViewController
+            return expected == destination.title
+        })
+        
+        // Act
+        self.act() { (c: ViewController) in
+            
+        }
+        
+        // Assert
+        waitForExpectationsWithTimeout(10, handler: nil)
+    }
     
     // Validates the 'Stop' button is hidden after user ends a recording session.
     func testShouldHideStopButton() {

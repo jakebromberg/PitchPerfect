@@ -17,6 +17,30 @@ public class NavigationController: UINavigationController {
         // must be set to false otherwise the controller behavior is not what you expect.
         super.pushViewController(viewController, animated: thisOrThat(animated, false))
     }
+    
+    public override func popToRootViewControllerAnimated(animated: Bool) -> [AnyObject]? {
+        return super.popToRootViewControllerAnimated(thisOrThat(animated, false))
+    }
+    
+    public override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+        return super.popViewControllerAnimated(thisOrThat(animated, false))
+    }
+    
+    public override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(thisOrThat(animated, false))
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(thisOrThat(animated, false))
+    }
+    
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(thisOrThat(animated, false))
+    }
+    
+    public override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(thisOrThat(animated, false))
+    }
 }
 
 // TODO: Find more relevant name for this snippet

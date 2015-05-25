@@ -60,11 +60,30 @@ public class RecordSoundsViewController: UIViewController {
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        super.prepareForSegue(segue, sender: sender)
+        
+        let destination: AnyObject = segue.destinationViewController
+        
         // No funny business with segue identifiers and etc.
-        if let playSounds = segue.destinationViewController as? PlaySoundsDelegate {
+        if let playSounds = destination as? PlaySoundsDelegate {
             let record = sender as! RecordedAudio
             playSounds.initializePlayer(record)
+            
+            // TODO: Figure out how to use preprocessor directives in Swift, so we send notification only
+            // when DEBUG preprocessor directive is set.
+            
+            // This trick is to notify the test runtime we reached certain point while executing the code
+            // and it's not ideal, requires maintenance but testability is of top-notch priority.
+            NSNotificationCenter.defaultCenter().postNotificationName("prepareForSegue:playSounds", object: destination)
         }
+    }
+    
+    public override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(thisOrThat(animated, false))
+    }
+    
+    public override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(thisOrThat(animated, false))
     }
 }
 
