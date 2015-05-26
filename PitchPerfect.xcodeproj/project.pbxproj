@@ -26,6 +26,7 @@
 		1DECE30E1B05C467004D6495 /* GeneralSanityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */; };
 		1DECE3101B05C765004D6495 /* DefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE30F1B05C765004D6495 /* DefaultsTests.swift */; };
 		1DECE3121B05C801004D6495 /* StartOfRecordingSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DECE3111B05C801004D6495 /* StartOfRecordingSessionTests.swift */; };
+		1DFA31301B14416C00B49950 /* AudioPlaybackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFA312F1B14416C00B49950 /* AudioPlaybackService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		1DECE30D1B05C467004D6495 /* GeneralSanityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSanityTests.swift; sourceTree = "<group>"; };
 		1DECE30F1B05C765004D6495 /* DefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsTests.swift; sourceTree = "<group>"; };
 		1DECE3111B05C801004D6495 /* StartOfRecordingSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartOfRecordingSessionTests.swift; sourceTree = "<group>"; };
+		1DFA312F1B14416C00B49950 /* AudioPlaybackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlaybackService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				1D13E4901B008421007937A3 /* Supporting Files */,
 				1D269DBE1B0868AD0051EB74 /* NavigationController.swift */,
 				1DD960921B0B8E33001AAFDD /* helpers.swift */,
+				1DFA312F1B14416C00B49950 /* AudioPlaybackService.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				1D269DBF1B0868AD0051EB74 /* NavigationController.swift in Sources */,
 				1DD0E4251B10D8D200EA9B67 /* AudioRecordingService.swift in Sources */,
 				1DE93DF81B0AFA6000644B34 /* PlaySoundsViewController.swift in Sources */,
+				1DFA31301B14416C00B49950 /* AudioPlaybackService.swift in Sources */,
 				1D13E4931B008421007937A3 /* AppDelegate.swift in Sources */,
 				1DD960931B0B8E33001AAFDD /* helpers.swift in Sources */,
 			);

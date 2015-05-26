@@ -18,12 +18,50 @@ public typealias AudioRecordingDelegate = (
     fail: AudioRecordingFailDelegate
 )
 
+public protocol AudioRecordingServiceProtocol {
+    
+    func start(delegate: AudioRecordingDelegate)
+    func stop()
+}
+
 public class RecordedAudio: NSObject {
     var title: String!
     var filePath: NSURL!
 }
 
-class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
+// Sample recording service that mocks audio recording process and falls back to use "movie_quote.mp3" embedded resource.
+class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
+    
+    var delegate: AudioRecordingDelegate!
+    
+    func start(delegate: AudioRecordingDelegate) {
+        self.delegate = delegate
+        fetchResource("movie_quote", withExtension: "mp3", delegate: (
+            ok: self.fetchFileFromResources,
+            notfound: self.fileNotFound
+        ))
+    }
+    
+    func stop() {
+        // nothing to do
+    }
+    
+    private func fileNotFound() {
+        println("file not found...")
+        self.delegate.fail()
+    }
+    
+    private func fetchFileFromResources(filePath: NSURL!) {
+        var record = RecordedAudio()
+        record.title = "Sample"
+        record.filePath = filePath
+
+        self.delegate.done(record)
+    }
+}
+
+// Actual recording service that records & saves audio input to the file
+class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingServiceProtocol {
     
     var delegate: AudioRecordingDelegate!
     var audioRecorder: AVAudioRecorder!

@@ -17,42 +17,29 @@ public protocol PlaySoundsDelegate {
 public class PlaySoundsViewController: UIViewController, PlaySoundsDelegate {
     
     // TODO: Learn more about strong and weak references in Swift/iOS.
-    var player: AVAudioPlayer?
+    var audioService: AudioPlaybackService = AudioPlaybackService()
     
     @IBOutlet public weak var slowMoButtom: UIButton!
     @IBOutlet public weak var chipmunkButton: UIButton!
     
     @IBAction func playSlowMo(sender: UIButton, forEvent event: UIEvent) {
-        self.playAudio(Float(0.5))
+        self.audioService.play(AudioEffect.SlowMo)
     }
     
     @IBAction func playFastMo(sender: UIButton, forEvent event: UIEvent) {
-        self.playAudio(Float(3.0))
+        self.audioService.play(AudioEffect.FastMo)
     }
     
     @IBAction func stopButton(sender: UIButton, forEvent event: UIEvent) {
-        self.stopAudio()
+        self.audioService.stop()
     }
     
     @IBAction func playChipmunkAudio(sender: UIButton, forEvent event: UIEvent) {
+        self.audioService.play(AudioEffect.Chipmunk)
     }
     
     public func initializePlayer(audio: RecordedAudio) {
-        // TODO: Should we dealloc/nullify the player if there is already an instance?
-        self.player = AVAudioPlayer(contentsOfURL: audio.filePath, error: nil)
-        
-        // Enable variable audio playback rate
-        self.player?.enableRate = true
-    }
-    
-    func stopAudio() {
-        self.player?.stop()
-        self.player?.currentTime = 0.0
-    }
-    
-    func playAudio(rate: Float) {
-        self.stopAudio()
-        self.player?.rate = rate
-        self.player?.play()
+        // TODO: Should we dealloc/nullify the service if there is already an instance?
+        self.audioService.prepare(audio.filePath)
     }
 }
