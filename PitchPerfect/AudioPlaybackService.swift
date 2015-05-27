@@ -9,13 +9,9 @@
 import Foundation
 import AVFoundation
 
-enum AudioEffect {
-    case SlowMo, FastMo, Chipmunk, DarthVader
-}
-
-class AudioPlaybackService {
+class AudioPlaybackService: NSObject {
     
-    private var engine: AVAudioEngine = AVAudioEngine()
+    private let engine: AVAudioEngine = AVAudioEngine()
     private var file: AVAudioFile!
     private var player: AVAudioPlayerNode!
     private var processor: AVAudioNode!
@@ -27,54 +23,55 @@ class AudioPlaybackService {
         // It turns out AVAudioPlayerNode allocations are quite expensive, thus 
         // do some cleanup after the previous run & initialize it only when we're about to play the file.
         // This way I've got the memory consumption back under control.
-        if self.player != nil {
+        if player != nil {
             // detach the player node first
-            self.engine.detachNode(self.player)
-            self.player = nil
+            engine.detachNode(player)
+            player = nil
         }
         
         // init & attach the player
-        self.player = AVAudioPlayerNode()
-        self.engine.attachNode(self.player)
+        player = AVAudioPlayerNode()
+        engine.attachNode(player)
     }
     
     func play(effect: AudioEffect) {
         // ensure we always stop the playback that is already in the queue
-        self.stop()
+        stop()
         
         // cleanup the previous processor to freed the memory
-        if self.processor != nil {
-            self.engine.detachNode(self.processor)
-            self.processor = nil
+        if processor != nil {
+            engine.detachNode(processor)
+            processor = nil
         }
         
         // init & attach a new processor
-        self.processor = self.processing(effect)
-        self.engine.attachNode(self.processor)
+        processor = processing(effect)
+        engine.attachNode(processor)
         
-        self.engine.connect(self.player, to: self.processor, format: self.file.processingFormat)
-        self.engine.connect(self.processor, to: self.engine.mainMixerNode, format: self.file.processingFormat)
+        let fileFormat = file.processingFormat
+        engine.connect(player, to: processor, format: fileFormat)
+        engine.connect(processor, to: engine.mainMixerNode, format: fileFormat)
         
         // player should be initialized & ready by this time,
         // so we're good to schedule play the file as soon as possible (atTime: nil)
-        self.player.scheduleFile(self.file!, atTime: nil, completionHandler: nil)
+        player.scheduleFile(file!, atTime: nil, completionHandler: nil)
 
         // start the audio engine if it isn't running yet
-        if self.engine.running == false {
+        if engine.running == false {
             var error: NSError?
-            if self.engine.startAndReturnError(&error) == false {
+            if engine.startAndReturnError(&error) == false {
                 println(error)
                 return
             }
         }
         
         // poke the player to activate the chain
-        self.player.play()
+        player.play()
     }
     
     func stop() {
         // call to stop player, not the engine
-        self.player.stop()
+        player.stop()
     }
     
     private func processing(effect: AudioEffect) -> AVAudioNode? {
