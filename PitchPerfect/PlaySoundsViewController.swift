@@ -17,7 +17,7 @@ public protocol PlaySoundsDelegate {
 public class PlaySoundsViewController: UIViewController, PlaySoundsDelegate {
     
     // TODO: Learn more about strong and weak references in Swift/iOS.
-    var audioService: AudioPlaybackService = AudioPlaybackService()
+    private var audioService: AudioPlaybackService = AudioPlaybackService()
     
     @IBOutlet public weak var fastMoButton: UIButton!
     @IBOutlet public weak var slowMoButtom: UIButton!

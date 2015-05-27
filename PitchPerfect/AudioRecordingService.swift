@@ -29,10 +29,10 @@ public protocol AudioRecordingServiceProtocol {
 // Actual recording service that records & saves audio input to the file
 class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingServiceProtocol {
     
-    var delegate: AudioRecordingDelegate!
-    var audioRecorder: AVAudioRecorder!
-    var record: RecordedAudio!
-    var audioSession: AVAudioSession!
+    private var delegate: AudioRecordingDelegate!
+    private var audioRecorder: AVAudioRecorder!
+    private var record: RecordedAudio!
+    private var audioSession: AVAudioSession!
     
     func start(delegate: AudioRecordingDelegate) {
         // Keep reference to the callback
@@ -65,12 +65,12 @@ class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingSe
         self.audioSession.setActive(false, error: nil)
     }
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    private func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
         if (flag) {
             // Assemble an instance of the model
-            let filePath: NSURL! = recorder.url
-            let fileName: String! = filePath.lastPathComponent!
+            let filePath = recorder.url
+            let fileName = filePath.lastPathComponent!
             let record: RecordedAudio = RecordedAudio(title: fileName, filePath: filePath)
             
             // Notify the subscriber about recorded audio file availability

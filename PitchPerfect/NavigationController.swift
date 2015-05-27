@@ -42,14 +42,3 @@ public class NavigationController: UINavigationController {
         super.viewDidDisappear(thisOrThat(animated, false))
     }
 }
-
-// TODO: Find more relevant name for this snippet
-func thisOrThat<T>(this: T, that: T) -> T {
-    // Right now we use environment variable to recognize whether it is the test environment or not
-    let environment = NSProcessInfo.processInfo().environment
-    if environment["TEST"] != nil {
-        return that
-    }
-    
-    return this
-}

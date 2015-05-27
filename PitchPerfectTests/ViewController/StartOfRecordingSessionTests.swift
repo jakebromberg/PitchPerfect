@@ -81,5 +81,4 @@ class StartOfRecordingSessionTests: RecordSoundsTestCase {
             testSpy(c)
         }
     }
-
 }

@@ -10,7 +10,7 @@ import UIKit
 
 public class RecordSoundsViewController: UIViewController {
     
-    var recordingService: AudioRecordingServiceProtocol = SampleAudioRecordingSerice()
+    private var recordingService: AudioRecordingServiceProtocol = SampleAudioRecordingSerice()
 
     // TODO: Remove extra outlets when Swift begins to support TDD
     @IBOutlet public weak var recordButton: UIButton!
@@ -24,40 +24,6 @@ public class RecordSoundsViewController: UIViewController {
     }
     
     @IBAction func tapStopButton(sender: UIButton, forEvent event: UIEvent) {
-        self.stopRecording()
-    }
-    
-    func stopRecording() {
-        self.recorderState.hidden = true
-        self.stopButton.hidden = true
-        self.recordButton.enabled = true
-        recorderHint.enabled = true
-        
-        // Stop the actual recording...
-        self.recordingService.stop()
-    }
-    
-    func startRecording() {
-        self.recorderState.hidden = false
-        self.stopButton.hidden = false
-        self.recordButton.enabled = false
-        recorderHint.enabled = false
-        
-        // Start the actual recording...
-        self.recordingService.start((
-            done: self.doneWithRecording,
-            fail: self.failedToRecordAudio
-        ))
-    }
-    
-    func doneWithRecording(record: RecordedAudio) {
-        println("doneWithRecording -> " + record.filePath.path!)
-        self.performSegueWithIdentifier("PlaySounds", sender: record)
-    }
-    
-    func failedToRecordAudio() {
-        // For now this is just a simple callback to adjust UI accordingly if something goes wrong
-        println("Aww, snap! Good grief... something went wrong...")
         self.stopRecording()
     }
     
@@ -88,5 +54,38 @@ public class RecordSoundsViewController: UIViewController {
     public override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(thisOrThat(animated, false))
     }
+    
+    private func stopRecording() {
+        self.recorderState.hidden = true
+        self.stopButton.hidden = true
+        self.recordButton.enabled = true
+        recorderHint.enabled = true
+        
+        // Stop the actual recording...
+        self.recordingService.stop()
+    }
+    
+    private func startRecording() {
+        self.recorderState.hidden = false
+        self.stopButton.hidden = false
+        self.recordButton.enabled = false
+        recorderHint.enabled = false
+        
+        // Start the actual recording...
+        self.recordingService.start((
+            done: self.doneWithRecording,
+            fail: self.failedToRecordAudio
+        ))
+    }
+    
+    private func doneWithRecording(record: RecordedAudio) {
+        println("doneWithRecording -> " + record.filePath.path!)
+        self.performSegueWithIdentifier("PlaySounds", sender: record)
+    }
+    
+    private func failedToRecordAudio() {
+        // For now this is just a simple callback to adjust UI accordingly if something goes wrong
+        println("Aww, snap! Good grief... something went wrong...")
+        self.stopRecording()
+    }
 }
-

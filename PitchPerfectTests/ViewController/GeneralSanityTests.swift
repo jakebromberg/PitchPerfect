@@ -97,5 +97,4 @@ class GeneralSanityTests: RecordSoundsTestCase {
         // Assert
         XCTAssert(actual != nil, "Assertion failed since recorderState outlet is not connected to the view")
     }
-    
 }
