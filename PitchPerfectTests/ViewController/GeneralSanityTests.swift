@@ -12,6 +12,20 @@ import XCTest
 
 class GeneralSanityTests: RecordSoundsTestCase {
     
+    // Validates the 'Tap to Record' label outlet is connected to the actual control.
+    func testRecorderHintLabelOutletIsConnected() {
+        // Arrange
+        var actual: UILabel?
+        
+        // Act
+        self.act() { (c: ViewController) in 
+            actual = c.recorderHint
+        }
+        
+        // Assert
+        XCTAssert(actual != nil, "Assertion failed since recorderHint outlet is not connected to the view")
+    }
+    
     // Validates the navigation item of the controller has expected title.
     func testControllerNavigationItemHasExpectedTitle() {
         // Arrange

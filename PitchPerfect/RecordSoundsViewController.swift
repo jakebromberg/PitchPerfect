@@ -17,6 +17,7 @@ public class RecordSoundsViewController: UIViewController {
     @IBOutlet public weak var stopButton: UIButton!
     
     @IBOutlet public weak var recorderState: UILabel!
+    @IBOutlet public weak var recorderHint: UILabel!
     
     @IBAction func tapRecordButton(sender: UIButton, forEvent event: UIEvent) {
         self.startRecording()
@@ -30,6 +31,7 @@ public class RecordSoundsViewController: UIViewController {
         self.recorderState.hidden = true
         self.stopButton.hidden = true
         self.recordButton.enabled = true
+        recorderHint.enabled = true
         
         // Stop the actual recording...
         self.recordingService.stop()
@@ -39,6 +41,7 @@ public class RecordSoundsViewController: UIViewController {
         self.recorderState.hidden = false
         self.stopButton.hidden = false
         self.recordButton.enabled = false
+        recorderHint.enabled = false
         
         // Start the actual recording...
         self.recordingService.start((

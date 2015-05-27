@@ -13,6 +13,20 @@ import XCTest
 
 class EndOfRecordingSessionTests: RecordSoundsTestCase {
     
+    func testShouldEnableRecorderHintLabel() {
+        // Arrange
+        let expected = true
+        var actual: Bool!
+        
+        // Act
+        self.act() { (c: ViewController) in
+            actual = c.recorderHint.enabled
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
+    
     // Validates ...
     func testShouldPresentMixmix() {
         // Arrange

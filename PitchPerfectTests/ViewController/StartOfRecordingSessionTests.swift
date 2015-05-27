@@ -11,11 +11,26 @@ import UIKit
 import XCTest
 
 class StartOfRecordingSessionTests: RecordSoundsTestCase {
+    
+    // Validates that 'Tap to Record' label is disabled after user taps 'Record' button.
+    func testShouldDisableRecorderHintLabel() {
+        // Arrange
+        let expected = false
+        var actual: Bool!
+        
+        // Act
+        self.act() { (c: ViewController) in
+            actual = c.recorderHint.enabled
+        }
+        
+        // Assert
+        XCTAssert(expected == actual, "Fail => expected: '\(expected)' vs. actual: '\(actual)'")
+    }
 
     // Validates that 'Record' button is disabled after user taps it.
     func testShouldDisableRecordButton() {
         // Arrange
-        var expected = false
+        let expected = false
         var actual: Bool!
         
         // Act
