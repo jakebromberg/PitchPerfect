@@ -19,8 +19,14 @@ public class PlaySoundsViewController: UIViewController, PlaySoundsDelegate {
     // TODO: Learn more about strong and weak references in Swift/iOS.
     var audioService: AudioPlaybackService = AudioPlaybackService()
     
+    @IBOutlet public weak var fastMoButton: UIButton!
     @IBOutlet public weak var slowMoButtom: UIButton!
     @IBOutlet public weak var chipmunkButton: UIButton!
+    @IBOutlet public weak var darthVaderButton: UIButton!
+    
+    @IBAction func playDarthVader(sender: UIButton, forEvent event: UIEvent) {
+        self.audioService.play(AudioEffect.DarthVader)
+    }
     
     @IBAction func playSlowMo(sender: UIButton, forEvent event: UIEvent) {
         self.audioService.play(AudioEffect.SlowMo)

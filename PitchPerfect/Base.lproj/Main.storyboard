@@ -160,6 +160,15 @@
                                     <action selector="playChipmunkAudio:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="Jm3-mm-aXm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxq-uj-aWN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darthvader">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDarthVader:forEvent:" destination="eld-ZK-YUH" eventType="touchUpInside" id="Xnn-F8-2hk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -168,7 +177,9 @@
                             <constraint firstItem="v5b-1k-Mwu" firstAttribute="top" secondItem="GD8-lU-WHu" secondAttribute="bottom" constant="83" id="ErT-ke-sGD">
                                 <variation key="widthClass=compact" constant="60"/>
                             </constraint>
+                            <constraint firstItem="Uxq-uj-aWN" firstAttribute="top" secondItem="v5b-1k-Mwu" secondAttribute="top" id="H1c-Ny-NFD"/>
                             <constraint firstItem="GD8-lU-WHu" firstAttribute="leading" secondItem="2sF-bl-pYd" secondAttribute="leadingMargin" constant="22" id="WH7-bG-B8y"/>
+                            <constraint firstItem="Uxq-uj-aWN" firstAttribute="leading" secondItem="xyn-Bl-2e2" secondAttribute="leading" id="YGR-ZI-r9J"/>
                             <constraint firstItem="GD8-lU-WHu" firstAttribute="top" secondItem="YZo-wa-nN3" secondAttribute="bottom" constant="44" id="gUC-Hs-Roa"/>
                             <constraint firstItem="nlZ-kk-yO4" firstAttribute="top" secondItem="Oc3-ac-5kp" secondAttribute="bottom" constant="92" id="mqQ-19-4H2"/>
                             <constraint firstItem="Oc3-ac-5kp" firstAttribute="centerX" secondItem="2sF-bl-pYd" secondAttribute="centerX" id="oia-2e-tdg"/>
@@ -180,16 +191,19 @@
                                 <exclude reference="xyn-Bl-2e2"/>
                                 <exclude reference="Oc3-ac-5kp"/>
                                 <exclude reference="v5b-1k-Mwu"/>
+                                <exclude reference="Uxq-uj-aWN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="mqQ-19-4H2"/>
                                 <exclude reference="WH7-bG-B8y"/>
                                 <exclude reference="gUC-Hs-Roa"/>
-                                <exclude reference="oia-2e-tdg"/>
                                 <exclude reference="ErT-ke-sGD"/>
                                 <exclude reference="pCo-iq-urj"/>
                                 <exclude reference="4qd-ql-zZa"/>
                                 <exclude reference="AUd-W8-BBP"/>
+                                <exclude reference="H1c-Ny-NFD"/>
+                                <exclude reference="YGR-ZI-r9J"/>
+                                <exclude reference="oia-2e-tdg"/>
+                                <exclude reference="mqQ-19-4H2"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -198,21 +212,26 @@
                                 <include reference="xyn-Bl-2e2"/>
                                 <include reference="Oc3-ac-5kp"/>
                                 <include reference="v5b-1k-Mwu"/>
+                                <include reference="Uxq-uj-aWN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="mqQ-19-4H2"/>
                                 <include reference="WH7-bG-B8y"/>
                                 <include reference="gUC-Hs-Roa"/>
-                                <include reference="oia-2e-tdg"/>
                                 <include reference="ErT-ke-sGD"/>
                                 <include reference="pCo-iq-urj"/>
                                 <include reference="4qd-ql-zZa"/>
                                 <include reference="AUd-W8-BBP"/>
+                                <include reference="H1c-Ny-NFD"/>
+                                <include reference="YGR-ZI-r9J"/>
+                                <include reference="oia-2e-tdg"/>
+                                <include reference="mqQ-19-4H2"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="chipmunkButton" destination="v5b-1k-Mwu" id="Jxm-Oq-W9h"/>
+                        <outlet property="darthVaderButton" destination="Uxq-uj-aWN" id="cgk-L0-Cgf"/>
+                        <outlet property="fastMoButton" destination="xyn-Bl-2e2" id="FGa-l4-OiS"/>
                         <outlet property="slowMoButtom" destination="GD8-lU-WHu" id="H6j-Oc-y7h"/>
                     </connections>
                 </viewController>
@@ -241,6 +260,7 @@
     </scenes>
     <resources>
         <image name="chipmunk" width="100" height="100"/>
+        <image name="darthvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slowmo" width="100" height="100"/>

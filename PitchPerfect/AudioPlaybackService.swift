@@ -81,6 +81,11 @@ class AudioPlaybackService {
         var node: AVAudioNode?
         
         switch effect {
+        case .DarthVader:
+            let unode = AVAudioUnitTimePitch()
+            unode.rate = 0.80
+            unode.pitch = -800
+            node = unode
         case .FastMo:
             let unode = AVAudioUnitTimePitch()
             unode.rate = 2

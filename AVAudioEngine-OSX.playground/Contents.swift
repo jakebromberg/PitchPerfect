@@ -54,6 +54,11 @@ class AudioPlaybackService {
         var node: AVAudioNode?
         
         switch effect {
+        case .DarthVader:
+            let unode = AVAudioUnitTimePitch()
+            unode.rate = 0.80
+            unode.pitch = -800
+            node = unode
         case .FastMo:
             let unode = AVAudioUnitTimePitch()
             unode.rate = 2
@@ -77,7 +82,7 @@ class AudioPlaybackService {
 
 let audioService = AudioPlaybackService()
 audioService.prepare(urlOfMovieQuote)
-audioService.play(AudioEffect.FastMo)
+audioService.play(AudioEffect.DarthVader)
 
 //: Secret ingredient - run the playground indefinitely to keep background threads alive (those created by AVAudioEngine)
 //: Credits to Jamie Bullock's post: [Live coding audio with Swift Playgrounds](http://jamiebullock.com/post/89243252529/live-coding-audio-with-swift-playgrounds)
