@@ -19,7 +19,7 @@ class DefaultsTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.stopButton.hidden
         }
         
@@ -34,7 +34,7 @@ class DefaultsTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recorderState.hidden
         }
         

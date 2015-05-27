@@ -20,11 +20,11 @@ public class RecordSoundsViewController: UIViewController {
     @IBOutlet public weak var recorderHint: UILabel!
     
     @IBAction func tapRecordButton(sender: UIButton, forEvent event: UIEvent) {
-        self.startRecording()
+        startRecording()
     }
     
     @IBAction func tapStopButton(sender: UIButton, forEvent event: UIEvent) {
-        self.stopRecording()
+        stopRecording()
     }
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -56,36 +56,36 @@ public class RecordSoundsViewController: UIViewController {
     }
     
     private func stopRecording() {
-        self.recorderState.hidden = true
-        self.stopButton.hidden = true
-        self.recordButton.enabled = true
+        recorderState.hidden = true
+        stopButton.hidden = true
+        recordButton.enabled = true
         recorderHint.enabled = true
         
         // Stop the actual recording...
-        self.recordingService.stop()
+        recordingService.stop()
     }
     
     private func startRecording() {
-        self.recorderState.hidden = false
-        self.stopButton.hidden = false
-        self.recordButton.enabled = false
+        recorderState.hidden = false
+        stopButton.hidden = false
+        recordButton.enabled = false
         recorderHint.enabled = false
         
         // Start the actual recording...
-        self.recordingService.start((
-            done: self.doneWithRecording,
-            fail: self.failedToRecordAudio
+        recordingService.start((
+            done: doneWithRecording,
+            fail: failedToRecordAudio
         ))
     }
     
     private func doneWithRecording(record: RecordedAudio) {
         println("doneWithRecording -> " + record.filePath.path!)
-        self.performSegueWithIdentifier("PlaySounds", sender: record)
+        performSegueWithIdentifier("PlaySounds", sender: record)
     }
     
     private func failedToRecordAudio() {
         // For now this is just a simple callback to adjust UI accordingly if something goes wrong
         println("Aww, snap! Good grief... something went wrong...")
-        self.stopRecording()
+        stopRecording()
     }
 }

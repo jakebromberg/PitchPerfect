@@ -24,7 +24,7 @@ class MainStoryboardNavigationSanityTests: XCTestCase {
         var actual: NSString!
         
         // Act
-        self.act() { (c: NavigationController) in
+        act() { (c: NavigationController) in
             actual = className(c.visibleViewController)
         }
         

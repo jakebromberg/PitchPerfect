@@ -18,7 +18,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: UILabel?
         
         // Act
-        self.act() { (c: ViewController) in 
+        act() { (c: ViewController) in
             actual = c.recorderHint
         }
         
@@ -33,7 +33,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: String?
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.navigationItem.title
         }
         
@@ -48,7 +48,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: String?
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.title
         }
         
@@ -62,7 +62,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.stopButton
         }
         
@@ -76,7 +76,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recordButton
         }
         
@@ -90,7 +90,7 @@ class GeneralSanityTests: RecordSoundsTestCase {
         var actual: UILabel?
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recorderState
         }
         

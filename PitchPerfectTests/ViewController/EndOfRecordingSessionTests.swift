@@ -19,7 +19,7 @@ class EndOfRecordingSessionTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recorderHint.enabled
         }
         
@@ -38,7 +38,7 @@ class EndOfRecordingSessionTests: RecordSoundsTestCase {
         })
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             
         }
         
@@ -53,7 +53,7 @@ class EndOfRecordingSessionTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.stopButton.hidden
         }
         
@@ -68,7 +68,7 @@ class EndOfRecordingSessionTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recordButton.enabled
         }
         
@@ -83,7 +83,7 @@ class EndOfRecordingSessionTests: RecordSoundsTestCase {
         var actual: Bool!
         
         // Act
-        self.act() { (c: ViewController) in
+        act() { (c: ViewController) in
             actual = c.recorderState.hidden
         }
         

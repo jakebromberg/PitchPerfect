@@ -18,7 +18,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIImage?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.darthVaderButton.currentImage
         }
         
@@ -32,7 +32,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.darthVaderButton
         }
         
@@ -46,7 +46,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIImage?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.fastMoButton.currentImage
         }
         
@@ -60,7 +60,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.fastMoButton
         }
         
@@ -74,7 +74,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIImage?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.chipmunkButton.currentImage
         }
         
@@ -88,7 +88,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.chipmunkButton
         }
         
@@ -102,7 +102,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIImage?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.slowMoButtom.currentImage
         }
         
@@ -116,7 +116,7 @@ class PlaySoundsGeneralSanityTests: XCTestCase {
         var actual: UIButton?
         
         // Act
-        self.act() { (c: PlaySoundsViewController) in
+        act() { (c: PlaySoundsViewController) in
             actual = c.slowMoButtom
         }
         
