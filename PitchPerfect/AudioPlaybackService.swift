@@ -25,7 +25,7 @@ class AudioPlaybackService {
         
         // cleanup player node to freed the memory allocated for player node... 
         // It turns out AVAudioPlayerNode allocations are quite expensive, thus 
-        // we chose to cleanup after the previous run & initialize it only when we're about to play the file.
+        // do some cleanup after the previous run & initialize it only when we're about to play the file.
         // This way I've got the memory consumption back under control.
         if self.player != nil {
             // detach the player node first

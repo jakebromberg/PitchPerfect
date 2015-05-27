@@ -47,10 +47,8 @@ class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
     }
     
     private func fetchFileFromResources(filePath: NSURL!) {
-        var record = RecordedAudio()
-        record.title = "Sample"
-        record.filePath = filePath
-
+        var record = RecordedAudio(title: "Sample", filePath: filePath)
+        
         self.delegate.done(record)
     }
 }
