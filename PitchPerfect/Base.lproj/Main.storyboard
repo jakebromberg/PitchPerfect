@@ -135,14 +135,14 @@
                                 <exclude reference="v5b-1k-Mwu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="mqQ-19-4H2"/>
                                 <exclude reference="WH7-bG-B8y"/>
                                 <exclude reference="gUC-Hs-Roa"/>
-                                <exclude reference="4qd-ql-zZa"/>
-                                <exclude reference="AUd-W8-BBP"/>
+                                <exclude reference="oia-2e-tdg"/>
                                 <exclude reference="ErT-ke-sGD"/>
                                 <exclude reference="pCo-iq-urj"/>
-                                <exclude reference="oia-2e-tdg"/>
-                                <exclude reference="mqQ-19-4H2"/>
+                                <exclude reference="4qd-ql-zZa"/>
+                                <exclude reference="AUd-W8-BBP"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -153,14 +153,14 @@
                                 <include reference="v5b-1k-Mwu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="mqQ-19-4H2"/>
                                 <include reference="WH7-bG-B8y"/>
                                 <include reference="gUC-Hs-Roa"/>
-                                <include reference="4qd-ql-zZa"/>
-                                <include reference="AUd-W8-BBP"/>
+                                <include reference="oia-2e-tdg"/>
                                 <include reference="ErT-ke-sGD"/>
                                 <include reference="pCo-iq-urj"/>
-                                <include reference="oia-2e-tdg"/>
-                                <include reference="mqQ-19-4H2"/>
+                                <include reference="4qd-ql-zZa"/>
+                                <include reference="AUd-W8-BBP"/>
                             </mask>
                         </variation>
                     </view>

@@ -24,11 +24,6 @@ public protocol AudioRecordingServiceProtocol {
     func stop()
 }
 
-public class RecordedAudio: NSObject {
-    var title: String!
-    var filePath: NSURL!
-}
-
 // Sample recording service that mocks audio recording process and falls back to use "movie_quote.mp3" embedded resource.
 class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
     
@@ -80,16 +75,14 @@ class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingSe
         formatter.dateFormat = "ddMMyyyy-HHmmss"
         
         let fileName = formatter.stringFromDate(today) + ".wav"
+        let filePath = NSURL.fileURLWithPathComponents([folderPath, fileName])
         
-        self.record = RecordedAudio()
-        self.record.title = fileName
-        self.record.filePath = NSURL.fileURLWithPathComponents([folderPath, fileName])
-        println(self.record.filePath)
+        println("recording to this file ~> \(filePath)")
         
         self.audioSession = AVAudioSession.sharedInstance()
         self.audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
         
-        self.audioRecorder = AVAudioRecorder(URL: self.record.filePath, settings: nil, error: nil)
+        self.audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
         self.audioRecorder.delegate = self
         self.audioRecorder.meteringEnabled = true
         self.audioRecorder.record()
@@ -104,7 +97,13 @@ class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingSe
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
         if (flag) {
-            self.delegate.done(self.record)
+            // Assemble an instance of the model
+            let filePath: NSURL! = recorder.url
+            let fileName: String! = filePath.lastPathComponent!
+            let record: RecordedAudio = RecordedAudio(title: fileName, filePath: filePath)
+            
+            // Notify the subscriber about recorded audio file availability
+            self.delegate.done(record)
         } else {
             self.delegate.fail()
         }
