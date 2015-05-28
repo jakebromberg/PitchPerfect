@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class RecordedAudio: NSObject {
+// This is being used as a container to pass data around via performSequeWithIdentifier
+// and one of the constraints is that the object must be a reference type.
+final public class RecordedAudio: NSObject {
     
     public let title: String!
     public let filePath: NSURL!

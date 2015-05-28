@@ -9,7 +9,7 @@
 import Foundation
 
 // Sample recording service that mocks audio recording process and falls back to use "movie_quote.mp3" embedded resource.
-class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
+final class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
     
     private var delegate: AudioRecordingDelegate!
     

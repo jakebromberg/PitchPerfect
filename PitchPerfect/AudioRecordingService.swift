@@ -9,25 +9,8 @@
 import Foundation
 import AVFoundation
 
-public typealias AudioRecordingDoneDelegate = (RecordedAudio) -> Void
-public typealias AudioRecordingFailDelegate = () -> Void
-
-// Combined type alias for convenience and both fields are required
-public typealias AudioRecordingDelegate = (
-    done: AudioRecordingDoneDelegate,
-    fail: AudioRecordingFailDelegate
-)
-
-// An abstraction layer on top of AudioRecordingService, so we could easily swap
-// it with an implementation that fetches the data from resources for convenience when clicking thru the app.
-public protocol AudioRecordingServiceProtocol {
-    
-    func start(delegate: AudioRecordingDelegate)
-    func stop()
-}
-
 // Actual recording service that records & saves audio input to the file
-class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingServiceProtocol {
+final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingServiceProtocol {
     
     private var delegate: AudioRecordingDelegate!
     private var audioRecorder: AVAudioRecorder!
