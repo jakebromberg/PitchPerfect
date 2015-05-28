@@ -12,11 +12,11 @@ import AVFoundation
 // Actual recording service that records & saves audio input to the file
 final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecordingServiceProtocol {
     
-    private var delegate: AudioRecordingDelegate!
+    private var delegate: AudioRecordingCallback!
     private var audioRecorder: AVAudioRecorder!
     private var audioSession: AVAudioSession!
     
-    func start(delegate: AudioRecordingDelegate) {
+    func start(delegate: AudioRecordingCallback) {
         // Keep reference to the callback
         self.delegate = delegate
         

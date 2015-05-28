@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="crS-kW-oSC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -215,20 +216,20 @@
                                 <exclude reference="Oc3-ac-5kp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="LhZ-qH-azJ"/>
+                                <exclude reference="4xx-8Y-bdy"/>
+                                <exclude reference="pWm-UY-j4C"/>
                                 <exclude reference="5Me-Ee-9fD"/>
                                 <exclude reference="G3g-si-Ryc"/>
+                                <exclude reference="s1n-wk-BbK"/>
+                                <exclude reference="I2b-zl-0ZM"/>
+                                <exclude reference="ijr-Yt-0hu"/>
+                                <exclude reference="ovr-27-mu9"/>
+                                <exclude reference="u26-Jx-J9h"/>
                                 <exclude reference="NuI-Sp-KrK"/>
                                 <exclude reference="tdX-7X-VIA"/>
                                 <exclude reference="hYb-VE-v4w"/>
                                 <exclude reference="sfD-Ln-Tdy"/>
-                                <exclude reference="I2b-zl-0ZM"/>
-                                <exclude reference="ijr-Yt-0hu"/>
-                                <exclude reference="4xx-8Y-bdy"/>
-                                <exclude reference="pWm-UY-j4C"/>
-                                <exclude reference="ovr-27-mu9"/>
-                                <exclude reference="u26-Jx-J9h"/>
-                                <exclude reference="s1n-wk-BbK"/>
-                                <exclude reference="LhZ-qH-azJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -242,20 +243,20 @@
                                 <include reference="Oc3-ac-5kp"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LhZ-qH-azJ"/>
+                                <include reference="4xx-8Y-bdy"/>
+                                <include reference="pWm-UY-j4C"/>
                                 <include reference="5Me-Ee-9fD"/>
                                 <include reference="G3g-si-Ryc"/>
+                                <include reference="s1n-wk-BbK"/>
+                                <include reference="I2b-zl-0ZM"/>
+                                <include reference="ijr-Yt-0hu"/>
+                                <include reference="ovr-27-mu9"/>
+                                <include reference="u26-Jx-J9h"/>
                                 <include reference="NuI-Sp-KrK"/>
                                 <include reference="tdX-7X-VIA"/>
                                 <include reference="hYb-VE-v4w"/>
                                 <include reference="sfD-Ln-Tdy"/>
-                                <include reference="I2b-zl-0ZM"/>
-                                <include reference="ijr-Yt-0hu"/>
-                                <include reference="4xx-8Y-bdy"/>
-                                <include reference="pWm-UY-j4C"/>
-                                <include reference="ovr-27-mu9"/>
-                                <include reference="u26-Jx-J9h"/>
-                                <include reference="s1n-wk-BbK"/>
-                                <include reference="LhZ-qH-azJ"/>
                             </mask>
                         </variation>
                     </view>

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public typealias AudioRecordingDoneDelegate = (RecordedAudio) -> Void
-public typealias AudioRecordingFailDelegate = () -> Void
+public typealias AudioRecordingDoneCallback = (RecordedAudio) -> Void
+public typealias AudioRecordingFailCallback = () -> Void
 
 // Combined type alias for convenience and both fields are required
-public typealias AudioRecordingDelegate = (
-    done: AudioRecordingDoneDelegate,
-    fail: AudioRecordingFailDelegate
+public typealias AudioRecordingCallback = (
+    done: AudioRecordingDoneCallback,
+    fail: AudioRecordingFailCallback
 )

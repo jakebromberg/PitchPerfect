@@ -11,9 +11,9 @@ import Foundation
 // Sample recording service that mocks audio recording process and falls back to use "movie_quote.mp3" embedded resource.
 final class SampleAudioRecordingSerice: NSObject, AudioRecordingServiceProtocol {
     
-    private var delegate: AudioRecordingDelegate!
+    private var delegate: AudioRecordingCallback!
     
-    func start(delegate: AudioRecordingDelegate) {
+    func start(delegate: AudioRecordingCallback) {
         self.delegate = delegate
         fetchResource("movie_quote", withExtension: "mp3", delegate: (
             ok: fetchFileFromResources,
