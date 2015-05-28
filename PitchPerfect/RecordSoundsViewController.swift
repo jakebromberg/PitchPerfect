@@ -10,7 +10,11 @@ import UIKit
 
 public class RecordSoundsViewController: UIViewController {
     
+#if SAMPLE
     private var recordingService: AudioRecordingServiceProtocol = SampleAudioRecordingSerice()
+#else
+    private var recordingService: AudioRecordingServiceProtocol = AudioRecordingService()
+#endif
 
     // TODO: Remove extra outlets when Swift begins to support TDD
     @IBOutlet public weak var recordButton: UIButton!
