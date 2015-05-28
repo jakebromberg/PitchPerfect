@@ -75,9 +75,19 @@ class AudioPlaybackService: NSObject {
     }
     
     private func processing(effect: AudioEffect) -> AVAudioNode? {
-        var node: AVAudioNode?
+        let node: AVAudioNode?
         
         switch effect {
+        case .Echo:
+            let unode = AVAudioUnitDelay()
+            unode.delayTime = 0.5
+            unode.wetDryMix = 50
+            node = unode
+        case .Reverb:
+            let unode = AVAudioUnitReverb()
+            unode.loadFactoryPreset(.MediumHall3)
+            unode.wetDryMix = 50
+            node = unode
         case .DarthVader:
             let unode = AVAudioUnitTimePitch()
             unode.rate = 0.80

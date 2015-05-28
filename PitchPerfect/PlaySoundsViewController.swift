@@ -24,6 +24,14 @@ public class PlaySoundsViewController: UIViewController, PlaySoundsDelegate {
     @IBOutlet public weak var chipmunkButton: UIButton!
     @IBOutlet public weak var darthVaderButton: UIButton!
     
+    @IBAction func playEcho(sender: UIButton, forEvent event: UIEvent) {
+        audioService.play(.Echo)
+    }
+    
+    @IBAction func playReverb(sender: UIButton, forEvent event: UIEvent) {
+        audioService.play(.Reverb)
+    }
+    
     @IBAction func playDarthVader(sender: UIButton, forEvent event: UIEvent) {
         audioService.play(.DarthVader)
     }

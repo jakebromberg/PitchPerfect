@@ -9,5 +9,5 @@
 import Foundation
 
 enum AudioEffect {
-    case SlowMo, FastMo, Chipmunk, DarthVader
+    case SlowMo, FastMo, Chipmunk, DarthVader, Reverb, Echo
 }
