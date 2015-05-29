@@ -47,7 +47,7 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
         audioSession.setActive(false, error: nil)
     }
     
-    private func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
         if (flag) {
             // Assemble an instance of the model
