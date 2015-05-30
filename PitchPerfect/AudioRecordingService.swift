@@ -46,6 +46,11 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
         
         audioRecorder.stop()
         audioSession.setActive(false, error: nil)
+        
+        // Switch the category to be AVAudioSessionCategoryPlayback,
+        // so the audio volume level is adequate (without this the playback of recorded audio barely could be heard).
+        // Found the advice here: http://bit.ly/1JdTRXW
+        audioSession.setCategory(AVAudioSessionCategoryPlayback, error: nil)
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
