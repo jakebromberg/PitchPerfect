@@ -60,7 +60,6 @@ class AudioPlaybackService: NSObject {
         if engine.running == false {
             var error: NSError?
             if engine.startAndReturnError(&error) == false {
-                println(error)
                 return
             }
         }

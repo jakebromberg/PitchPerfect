@@ -66,7 +66,10 @@ public class RecordSoundsViewController: UIViewController {
         recorderHint.enabled = true
         
         // Stop the actual recording...
-        recordingService.stop()
+        recordingService.stop((
+            done: doneWithRecording,
+            fail: failedToRecordAudio
+        ))
     }
     
     private func startRecording() {
@@ -76,14 +79,10 @@ public class RecordSoundsViewController: UIViewController {
         recorderHint.enabled = false
         
         // Start the actual recording...
-        recordingService.start((
-            done: doneWithRecording,
-            fail: failedToRecordAudio
-        ))
+        recordingService.start()
     }
     
     private func doneWithRecording(record: RecordedAudio) {
-        println("doneWithRecording -> " + record.filePath.path!)
         performSegueWithIdentifier("PlaySounds", sender: record)
     }
     

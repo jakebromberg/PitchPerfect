@@ -12,6 +12,6 @@ import Foundation
 // it with an implementation that fetches the data from resources for convenience when clicking thru the app.
 public protocol AudioRecordingServiceProtocol {
     
-    func start(callback: AudioRecordingCallback)
-    func stop()
+    func start()
+    func stop(callback: AudioRecordingCallback)
 }

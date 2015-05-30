@@ -16,10 +16,8 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
     private var audioRecorder: AVAudioRecorder!
     private var audioSession: AVAudioSession!
     
-    func start(delegate: AudioRecordingCallback) {
-        // Keep reference to the callback
-        self.delegate = delegate
-        
+    func start() {
+
         let folders = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let folderPath = folders.first as! String
         
@@ -30,8 +28,6 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
         let fileName = formatter.stringFromDate(today) + ".wav"
         let filePath = NSURL.fileURLWithPathComponents([folderPath, fileName])
         
-        println("recording to this file ~> \(filePath)")
-        
         audioSession = AVAudioSession.sharedInstance()
         audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
         
@@ -41,8 +37,13 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
         audioRecorder.record()
     }
     
-    func stop() {
-        // Stop recording and adjust the audio session state
+    /// Stops recording, adjusts the audio session state and uses the delegate supplied to report back
+    /// whether the recording is done or failed for any reason.
+    func stop(delegate: AudioRecordingCallback) {
+        
+        // Keep reference to the callback
+        self.delegate = delegate
+        
         audioRecorder.stop()
         audioSession.setActive(false, error: nil)
     }
@@ -50,12 +51,12 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate, AudioRecor
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         // Send back the signal as we're done with the recording
         if (flag) {
-            // Assemble an instance of the model
-            let filePath = recorder.url
-            let fileName = filePath.lastPathComponent!
-            let record = RecordedAudio(title: fileName, filePath: filePath)
+            // Assembly an instance of the model
+            let record = RecordedAudio(
+                title: recorder.url.lastPathComponent!,
+                filePath: recorder.url)
             
-            // Notify the subscriber about recorded audio file availability
+            // Notify the subscriber about the recorded audio file availability
             delegate.done(record)
         } else {
             delegate.fail()
